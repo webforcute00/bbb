@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bunnie boo ♡ credit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Mali", sans-serif;
+      background: linear-gradient(#fff0f5, #ffd6e4);
+      color: #8a5a6a;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrap { width: 100%; max-width: 420px; }
+
+    /* เมนูแท็บ */
+    .tabs {
+      display: flex;
+      background: white;
+      border-radius: 20px;
+      padding: 6px;
+      box-shadow: 0 4px 14px rgba(255, 150, 180, 0.2);
+      margin-bottom: 14px;
+    }
+    .tab {
+      flex: 1;
+      border: none;
+      background: none;
+      font-family: inherit;
+      color: #c9a0ae;
+      padding: 10px 0;
+      border-radius: 14px;
+      cursor: pointer;
+    }
+    .tab.active { background: #ffc0d3; color: #7a3b4f; font-weight: 600; }
+
+    .page { display: none; }
+    .page.show { display: block; }
+
+    .box {
+      background: white;
+      border-radius: 24px;
+      padding: 22px;
+      margin-bottom: 14px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(255, 150, 180, 0.2);
+    }
+
+    .avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      border: 4px solid #ffc0d3;
+      object-fit: cover;
+    }
+
+    h1 { margin: 10px 0 4px; font-size: 22px; color: #e86f94; }
+    h2 { margin: 0 0 12px; font-size: 16px; color: #e86f94; }
+    p { margin: 0 0 12px; font-size: 14px; }
+
+    .music-btn {
+      font-family: inherit;
+      border: 2px solid #ffc0d3;
+      background: white;
+      color: #e86f94;
+      padding: 6px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* สถิติ */
+    .stats { display: flex; gap: 12px; }
+    .stat {
+      flex: 1;
+      background: #fff5f8;
+      border-radius: 16px;
+      padding: 14px 6px;
+    }
+    .stat b { display: block; font-size: 22px; color: #e86f94; }
+    .stat span { font-size: 12px; }
+
+    /* ฟอร์มรีวิว */
+    .stars { font-size: 34px; margin-bottom: 10px; user-select: none; }
+    .star { cursor: pointer; color: #ffe0ea; }
+    .star.on { color: #ffcc33; }
+
+    input, textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 12px;
+      border: 2px solid #ffe0ea;
+      border-radius: 14px;
+      margin-bottom: 10px;
+      color: #8a5a6a;
+    }
+    textarea { height: 90px; resize: none; }
+
+    .send {
+      width: 100%;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(90deg, #ffa8c5, #ff8fb3);
+      border: none;
+      padding: 13px;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    /* รายการรีวิว */
+    .review {
+      text-align: left;
+      background: #fff5f8;
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .review .top { display: flex; justify-content: space-between; font-weight: 600; }
+    .review .st { color: #ffcc33; letter-spacing: 1px; }
+
+    /* ปุ่มติดต่อ */
+    .btn {
+      display: block;
+      margin-bottom: 12px;
+      padding: 14px;
+      border-radius: 16px;
+      background: #ffc0d3;
+      color: #7a3b4f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer { text-align: center; font-size: 12px; color: #c9a0ae; margin-top: 10px; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="tabs">
+      <button class="tab active" data-page="home">Home</button>
+      <button class="tab" data-page="review">Review</button>
+      <button class="tab" data-page="contact">Contact</button>
+    </div>
+
+    <!-- หน้า Home -->
+    <div class="page show" id="home">
+      <div class="box">
+        <img class="avatar" src="https://uploads.onecompiler.io/456u5hwfz/456uafuge/S__4571153.jpg" alt="">
+        <h1>bunnie boo ♡</h1>
+        <p>welcome to bunnie boo's world<br>รับทำทุกอย่าง งานไวค่ะ</p>
+        <button class="music-btn" id="musicBtn">▶ play music</button>
+        <audio id="bgm" loop src="ใส่ลิ้งค์เพลง.mp3"></audio>
+      </div>
+
+      <div class="box">
+        <div class="stats">
+          <div class="stat"><b id="total">0</b><span>Total Reviews 💌</span></div>
+          <div class="stat"><b id="avg">0.0</b><span>Rating ⭐</span></div>
+      <!-- รีวิวล่าสุดในหน้า Home -->
+<div class="box">
+  <h2>customer reviews ♡</h2>
+  <p>ขอบคุณที่มารีวิวให้เค้านะคะ 💌</p>
+  <div id="homeReviews"></div>
+
+  <button class="music-btn" onclick="goToReview()">
+    ดูรีวิวทั้งหมด ♡
+  </button>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- หน้า Review -->
+    <div class="page" id="review">
+      <div class="box">
+        <h2>รีวิวร้านได้ตรงนี้เลยนะคะ ♡</h2>
+        <div class="stars" id="stars">
+          <span class="star" data-v="1">★</span><span class="star" data-v="2">★</span><span class="star" data-v="3">★</span><span class="star" data-v="4">★</span><span class="star" data-v="5">★</span>
+        </div>
+        <input id="name" placeholder="your name ♡">
+        <textarea id="comment" placeholder="เขียนรีวิวได้เลยนะคะ ♡"></textarea>
+        <button class="send" id="sendBtn">sent review ♡</button>
+      </div>
+
+      <div id="list"></div>
+    </div>
+
+    <!-- หน้า Contact -->
+    <div class="page" id="contact">
+      <div class="box">
+        <h2>สั่งซื้อ / สอบถาม</h2>
+        <a class="btn" href="https://line.me">💬 Line</a>
+        <a class="btn" href="https://x.com">♡ Facebook</a>
+        <a class="btn" href="https://instagram.com">♡ Instagram</a>
+      </div>
+    </div>
+
+    <div class="footer">line id : @532pimvi </div>
+  </div>
+
+  <script>
+    // ---------- 1) สลับแท็บ ----------
+    const tabs = document.querySelectorAll(".tab");
+    const pages = document.querySelectorAll(".page");
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) { t.classList.remove("active"); });
+        pages.forEach(function (p) { p.classList.remove("show"); });
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.page).classList.add("show");
+      });
+    });
+
+    // ---------- 2) เพลง ----------
+    const btn = document.getElementById("musicBtn");
+    const bgm = document.getElementById("bgm");
+    btn.addEventListener("click", function () {
+      if (bgm.paused) { bgm.play(); btn.textContent = "❚❚ pause music"; }
+      else { bgm.pause(); btn.textContent = "▶ play music"; }
+    });
+
+    // ---------- 3) ดาว ----------
+    let rating = 5;
+    const starEls = document.querySelectorAll(".star");
+
+    function showStars() {
+      starEls.forEach(function (s) {
+        s.classList.toggle("on", Number(s.dataset.v) <= rating);
+      });
+    }
+    starEls.forEach(function (s) {
+      s.addEventListener("click", function () {
+        rating = Number(s.dataset.v);
+        showStars();
+      });
+    });
+    showStars();
+
+    // ---------- 4) รีวิว (เก็บในเครื่อง) ----------
+    let reviews = [];
+    try {
+      reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    } catch (e) {
+      reviews = [];
+    }
+
+    function render() {
+      const list = document.getElementById("list");
+      list.innerHTML = "";
+
+      reviews.forEach(function (r) {
+        const div = document.createElement("div");
+        div.className = "review";
+
+        const top = document.createElement("div");
+        top.className = "top";
+
+        const name = document.createElement("span");
+        name.textContent = r.name;
+
+        const st = document.createElement("span");
+        st.className = "st";
+        st.textContent = "★".repeat(r.stars);
+
+        top.appendChild(name);
+        top.appendChild(st);
+
+        const text = document.createElement("div");
+        text.textContent = r.comment;
+
+        div.appendChild(top);
+        div.appendChild(text);
+        list.appendChild(div);
+      });
+
+      // อัปเดตสถิติ
+      document.getElementById("total").textContent = reviews.length;
+      let sum = 0;
+      reviews.forEach(function (r) { sum += r.stars; });
+      const avg = reviews.length ? sum / reviews.length : 0;
+      document.getElementById("avg").textContent = avg.toFixed(1);
+    }
+
+     function renderHomeReviews() {
+  const homeList = document.getElementById("homeReviews");
+  homeList.innerHTML = "";
+
+  if (reviews.length === 0) {
+    homeList.textContent = "ยังไม่มีรีวิว มาเป็นคนแรกกันนะคะ ♡";
+    return;
+  }
+
+  reviews.slice(0, 3).forEach(function (r) {
+    const div = document.createElement("div");
+    div.className = "review";
+
+    const name = document.createElement("b");
+    name.textContent = r.name + " ";
+
+    const stars = document.createElement("span");
+    stars.className = "st";
+    stars.textContent = "★".repeat(r.stars);
+
+    const comment = document.createElement("p");
+    comment.textContent = r.comment;
+    comment.style.marginTop = "8px";
+
+    div.appendChild(name);
+    div.appendChild(stars);
+    div.appendChild(comment);
+    homeList.appendChild(div);
+  });
+}
+    document.getElementById("sendBtn").addEventListener("click", function () {
+      const name = document.getElementById("name").value.trim() || "Anonymous";
+      const comment = document.getElementById("comment").value.trim();
+      if (comment === "") { alert("เขียนรีวิวก่อนนะคะ ♡"); return; }
+
+      reviews.unshift({ name: name, comment: comment, stars: rating });
+      try { localStorage.setItem("reviews", JSON.stringify(reviews)); } catch (e) {}
+
+      document.getElementById("name").value = "";
+      document.getElementById("comment").value = "";
+      render();
+      renderHomeReviews();
+    });
+
+    render();
+  </script>
+</body>
+</html>
